@@ -13,6 +13,7 @@ import { UsersModule } from './users/users.module';
     }), 
     // Module to connect to MongoDB
     MongooseModule.forRootAsync({ 
+      imports: [ConfigModule],
       inject: [ConfigService], 
       useFactory: (config: ConfigService) => { 
         const useAtlas = config.get<string>('USE_ATLAS') === 'true'; 
