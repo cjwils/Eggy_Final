@@ -26,7 +26,6 @@ describe('UpdateTaskDto (Zod schema)', () => {
     ];
 
     for (const data of cases) {
-      // @ts-expect-error runtime checks
       const result = UpdateTaskSchema.safeParse(data);
       expect(result.success).toBe(true);
     }
